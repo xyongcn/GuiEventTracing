@@ -6,10 +6,10 @@
 1. 首先在Linux系统上将环境配置好，其中包括System的安装、相应的应用调试符号表。
 * System的安装：
   * 在/etc/apt/sources.list.d/目录下面新建一个debuginfo_debs.list文件内容如下：
-deb http://ddebs.ubuntu.com trusty main restricted universe multiverse      
-deb http://ddebs.ubuntu.com trusty-updates main restricted universe multiverse
-其中trusty是对应ubuntu版本的发行代号可以通过
-cat /etc/lsb-release  | grep DISTRIB_CODENAME 命令得到。
+    deb http://ddebs.ubuntu.com trusty main restricted universe multiverse      
+    deb http://ddebs.ubuntu.com trusty-updates main restricted universe multiverse
+    其中trusty是对应ubuntu版本的发行代号可以通过
+    cat /etc/lsb-release  | grep DISTRIB_CODENAME 命令得到。
   * 然后执行以下命令：
 apt-get update
 在执行完这句话后可能会报错，报错后执行以下命令，然后在将此命令执行一遍。
