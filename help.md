@@ -10,7 +10,7 @@
     deb http://ddebs.ubuntu.com trusty-updates main restricted universe multiverse
     其中trusty是对应ubuntu版本的发行代号可以通过
     cat /etc/lsb-release  | grep DISTRIB_CODENAME 命令得到。
-   * 然后执行以下命令：
+    * 然后执行以下命令：
      apt-get update
      在执行完这句话后可能会报错，报错后执行以下命令，然后在将此命令执行一遍。
 sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys XXXXXX
