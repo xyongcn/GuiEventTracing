@@ -14,8 +14,8 @@
      apt-get update
      在执行完这句话后可能会报错，报错后执行以下命令，然后在将此命令执行一遍。
 sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys XXXXXX
-* 安装systemtap: apt-get install systemtap
-* 符号表的安装：
+ * 安装systemtap: apt-get install systemtap
+ * 符号表的安装：
 先用apt-cache search 应用名来寻找相应应用的符号表
 例如：apt-cache search vlc 能找到其相应的符号表为vlc-dbg
 2. 相应应用动态链接库的定位：首先利用strace来获取大量与相关应用有关的动态链接库，然后利用正则表达式来过滤出无用的动态链接库，从而获得有用的动态链接库。在这部分由于需要肉眼进行筛选，所以在此处我们暂时指定所需应用的动态链接库。例如：vlc的动态链接库的位置为/usr/lib/vlc/plugins/gui/libqt4_plugin.so.
