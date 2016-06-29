@@ -1,0 +1,16 @@
+#! /usr/bin/env stap
+
+
+probe process("/usr/lib/x86_64-linux-gnu/libgtk-3.so.0").function("gtk_button_clicked").call            
+{
+if(($button->priv->label_text)!=0)
+{
+printf("%d   %d   %s   %s   %s\n",gettimeofday_ns(),pid(),pp(),execname(),user_string($button->priv->label_text))
+}
+}
+
+probe process("/usr/local/bin/gedit").function("*").call 
+{
+printf("%d   %d   %s   %s   %s\n",gettimeofday_ns(),pid(),pp(),execname(),$$parms)
+}
+
